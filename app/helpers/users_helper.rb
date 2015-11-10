@@ -6,9 +6,4 @@ module UsersHelper
     gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
     image_tag(gravatar_url, alt: user.name, class: "gravatar")
   end
-
-  # Returns true if the user role is supervisor.
-  def is_supervisor?
-    current_user.supervisor?
-  end
 end
