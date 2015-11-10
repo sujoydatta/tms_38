@@ -8,3 +8,5 @@ vn:
   invalid_email_message: "Email không hợp lệ / kết hợp mật khẩu"
   login_message: "Vui lòng hãy đăng nhập."
   welcome_message: "Chào mừng"
+  delete_trainee_sucessful_message: "Trainee xóa"
+  confirm_message: "Bạn chắc chắn?"

@@ -8,3 +8,5 @@ en:
   invalid_email_message: "Invalid email/password combination"
   login_message: "Please log in."
   welcome_message: "Welcome"
+  delete_trainee_sucessful_message: "Trainee deleted"
+  confirm_message: "You sure?"

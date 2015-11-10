@@ -7,25 +7,62 @@
         <% if logged_in? %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Course <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <% if current_user.supervisor? %>
+                <li><%= link_to "Add new", '#' %></li>
+                <li>
+                  <%= link_to "View all", '#' %>
+                </li>
+              <% else %>
+                <li>
+                  <%= link_to "View all", '#' %>
+                </li>
+              <% end %>
+            </ul>
+          </li>
+          <% if current_user.supervisor? %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Subject <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Add new", '#' %></li>
+                <li>
+                  <%= link_to "View all", '#' %>
+                </li>
+              </ul>
+            </li>
+          <% end %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               Trainee <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <% if is_supervisor? %>
-                <li><%= link_to "Add new", signup_path %></li>
+              <% if current_user.supervisor? %>
+                <li><%= link_to "Add new", supervisor_signup_path %></li>
+                <li>
+                  <%= link_to "View all", supervisor_users_path(
+                                          role: User::ROLE[:trainee]) %>
+                </li>
+              <% elsif current_user.trainee? %>
+                <li>
+                  <%= link_to "View all", users_path(
+                                          role: User::ROLE[:trainee]) %>
+                </li>
               <% end %>
-              <li>
-                <%= link_to "Show all", users_path(role: "trainee") %>
-              </li>
             </ul>
           </li>
-          <% if is_supervisor? %>
+          <% if current_user.supervisor? %>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 Supervisor <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
                 <li>
-                  <%= link_to "Show all", users_path(role: "supervisor") %>
+                  <%= link_to "View all", supervisor_users_path(
+                                          role: User::ROLE[:supervisor]) %>
                 </li>
               </ul>
             </li>
