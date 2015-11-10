@@ -202,3 +202,31 @@ input {
     border-bottom: 1px solid $gray-lighter;
   }
 }
+
+/* course css */
+
+.courses {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+}
+
+select {
+  width: 32.8%;
+}
+
+.panel-box{
+  margin-top: 1em;
+}
+
+.panel-course-name{
+  font-size: 3em;
+}
+
+.panel-course-footer{
+  height: 40px;
+}

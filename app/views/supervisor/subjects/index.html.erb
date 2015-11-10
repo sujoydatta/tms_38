@@ -1,0 +1,10 @@
+<% provide(:title, 'All Subjects') %>
+<h1><%= t(:all_subjects_text) %></h1>
+
+<%= will_paginate %>
+
+<table class="table">
+  <%= render @subjects %>
+</table>
+
+<%= will_paginate %>
