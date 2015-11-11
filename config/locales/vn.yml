@@ -10,3 +10,27 @@ vn:
   welcome_message: "Chào mừng"
   delete_trainee_sucessful_message: "Trainee xóa"
   confirm_message: "Bạn chắc chắn?"
+  course_creation_text: "Khóa học tạo"
+  course_update: "Chi tiết khóa học cập nhật"
+  course_delete: "Tất nhiên xóa"
+  course_create: "tạo khóa học"
+  save_change: "Lưu thay đổi"
+  edit: "Chỉnh sửa"
+  delete: "Xóa bỏ"
+  course: "Khóa học"
+  update_course: "Cập nhật chi tiết khóa học"
+  update_change: "Cập nhật Thay đổi"
+  course_detail: "Chi tiết khóa học"
+  name: "Tên"
+  description: "Miêu tả"
+  start_date: "ngày bắt đầu"
+  end_date: "Ngày cuối"
+  read_more: "Đọc thêm"
+  date_check_text: "đầu không được lớn hơn End ngày"
+  date:
+    order:
+      - :day
+      - :month
+      - :year
+    formats:
+      short: "%d-%m-%Y"

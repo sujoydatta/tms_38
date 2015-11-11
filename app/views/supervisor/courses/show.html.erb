@@ -1,0 +1,27 @@
+<% provide(:title, @course.name) %>
+<h1><%= t(:course_detail) %></h1>
+<div class="row">
+  <div class="panel panel-default panel-box">
+    <div class="panel-heading panel-course-name"><%= @course.name %>
+      <div class="pull-right">
+        <%= link_to t(:back), supervisor_courses_path,
+          class: "btn btn-default" %>
+        <%= link_to t(:edit), edit_supervisor_course_path(@course),
+          class: "btn btn-success" %>
+        <%= link_to t(:delete), [:supervisor, @course], method: :delete,
+          class: "btn btn-danger", data: { confirm: t(:confirm_message) } %>
+      </div>
+    </div>
+    <div class="panel-body">
+      <p><%= @course.description %></p>
+    </div>
+    <div class="panel-footer panel-course-footer">
+      <div class="col-sm-2">
+        Started on: <%= l @course.start_date, :format => :short %>
+      </div>
+      <div class="col-sm-2">
+        Ended on: <%= l @course.end_date, :format => :short %>
+      </div>
+    </div>
+  </div>
+</div>

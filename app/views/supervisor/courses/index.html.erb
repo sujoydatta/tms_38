@@ -1,0 +1,17 @@
+<h1><%= t(:course) %></h1>
+
+<%= will_paginate %>
+
+<table class="table">
+  <thead>
+    <th><%= t(:name) %></th>
+    <th><%= t(:description) %></th>
+    <th><%= t(:start_date) %></th>
+    <th><%= t(:end_date) %></th>
+  </thead>
+
+  <%= render @courses %>
+
+</table>
+
+<%= will_paginate %>
