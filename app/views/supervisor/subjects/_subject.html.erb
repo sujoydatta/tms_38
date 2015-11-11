@@ -1,0 +1,20 @@
+<tr>
+  <td><%= link_to subject.name, [:supervisor, subject] %></td>
+  <td>
+    <% if subject.description.length > 100 %>
+      <%= subject.description[0..100] %>...
+      <font color: "red">
+        <span><%= link_to t(:read_more), [:supervisor, subject] %></span>
+      </font>
+    <% else %>
+      <%= subject.description %>
+    <% end %>
+  </td>
+  <td align="right">
+    <%= link_to t(:edit), edit_supervisor_subject_path(subject),
+      class: "btn btn-success" %>
+    <%= link_to t(:delete), [:supervisor, subject], method: :delete,
+      class: "btn btn-danger",
+      data: { confirm: t(:delete_subject_confirmation_message) } %>
+  </td>
+</tr>
