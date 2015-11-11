@@ -40,6 +40,9 @@ en:
   start_date: "Start Date"
   end_date: "End Date"
   date_check_text: "can not be greater than End date"
+  tasks: "Tasks:"
+  order: "Order"
+  description: "Description"
   date:
     order:
       - :day

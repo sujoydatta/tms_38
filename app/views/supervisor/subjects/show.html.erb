@@ -14,6 +14,13 @@
     </div>
     <div class="panel-body">
       <p><%= @subject.description %></p>
+
+      <b><%= t 'tasks' %></b> <br>
+
+      <% @tasks.each do |task| %>
+        <h4><%= task.name %></h4>
+        <span><%= task.description %></span> <br><br>
+      <% end %>
     </div>
     <div class="panel-footer panel-course-footer"></div>
   </div>
