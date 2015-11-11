@@ -1,0 +1,25 @@
+ <tr>
+    <td><%= link_to course.name, [:supervisor, course] %></td>
+    <td>
+        <% if course.description.length > 100 %>
+          <%= course.description[0..100] %>...
+          <font color: "red">
+            <span>
+              <%= link_to t(:read_more), [:supervisor, course] %>
+            </span>
+          </font>
+        <% else %>
+          <%= course.description %>
+        <% end %>
+    </td>
+    <td><%= l course.start_date, format: :short %> </td>
+    <td><%= l course.end_date, format: :short %></td>
+    <td align="right">
+      <%= link_to t(:edit), edit_supervisor_course_path(course),
+        class: "btn btn-success" %>
+      <%= link_to t(:delete), [:supervisor, course], method: :delete,
+        class: "btn btn-danger", data: { confirm: t(:confirm_message) } %>
+    </td>
+</tr>
+
+

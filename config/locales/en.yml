@@ -25,3 +25,22 @@ en:
   name: "Name"
   description: "Description"
   read_more: "Read More"
+  course_creation_text: "Course Created"
+  course_update: "Course details updated"
+  course_delete: "Course deleted"
+  course_create: "Create Course"
+  save_change: "Save changes"
+  course: "Course"
+  update_course: "Update course details"
+  update_change: "Update Changes"
+  course_detail: "Course Details"
+  start_date: "Start Date"
+  end_date: "End Date"
+  date_check_text: "can not be greater than End date"
+  date:
+    order:
+      - :day
+      - :month
+      - :year
+    formats:
+      short: "%d-%m-%Y"
