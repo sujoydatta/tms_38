@@ -8,16 +8,14 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find params[:id]
   end
 
   def edit
   end
 
   def update
-    @user = User.find params[:id]
     if @user.update_attributes user_params
-      flash[:success] = t(:update_profile_sucessful_message)
+      flash[:success] = t 'update_profile_sucessful_message'
       redirect_to @user
     else
       render 'edit'
@@ -25,30 +23,29 @@ class UsersController < ApplicationController
   end
 
   private
+  def user_params
+    params.require(:user).permit :name, :email, :role, :password,
+                                 :password_confirmation
+  end
 
-    def user_params
-      params.require(:user).permit(:name, :email, :role, :password,
-                                   :password_confirmation)
+  # Before filters
+
+  # Confirms a logged-in user.
+  def logged_in_user
+    unless logged_in?
+      store_location
+      flash[:danger] = t 'login_message'
+      redirect_to login_url
     end
+  end
 
-    # Before filters
+  # Confirms the correct user.
+  def correct_user
+    @user = User.find params[:id]
+    redirect_to(root_url) unless current_user?(@user)
+  end
 
-    # Confirms a logged-in user.
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = t(:login_message)
-        redirect_to login_url
-      end
-    end
-
-    # Confirms the correct user.
-    def correct_user
-      @user = User.find params[:id]
-      redirect_to(root_url) unless current_user?(@user)
-    end
-
-    def load_user
-      @user = User.find params[:id]
-    end
+  def load_user
+    @user = User.find params[:id]
+  end
 end

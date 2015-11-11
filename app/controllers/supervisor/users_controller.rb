@@ -6,7 +6,6 @@ class Supervisor::UsersController < ApplicationController
   end
 
   def show
-    @user = User.find params[:id]
   end
 
   def new
@@ -17,7 +16,7 @@ class Supervisor::UsersController < ApplicationController
     @user = User.new user_params
     @user.attributes = {role: User::ROLE[:trainee]}
     if @user.save
-      flash[:success] = t(:add_trainee_sucessful_message)
+      flash[:success] = t 'add_trainee_sucessful_message'
       redirect_to @user
     else
       render 'new'
@@ -27,22 +26,30 @@ class Supervisor::UsersController < ApplicationController
   def edit
   end
 
+  def update
+    if @user.update_attributes user_params
+      flash[:success] = t 'update_profile_sucessful_message'
+      redirect_to @user
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
-    User.find(params[:id]).destroy
-    flash[:success] = t(:delete_trainee_sucessful_message)
+    @user.destroy
+    flash[:success] = t 'delete_trainee_sucessful_message'
     redirect_to supervisor_users_path(role: User::ROLE[:trainee])
   end
 
   private
+  def user_params
+    params.require(:user).permit :name, :email, :role, :password,
+                                 :password_confirmation
+  end
 
-    def user_params
-      params.require(:user).permit(:name, :email, :role, :password,
-                                   :password_confirmation)
-    end
+  # Before filters
 
-    # Before filters
-
-    def load_user
-      @user = User.find params[:id]
-    end
+  def load_user
+    @user = User.find params[:id]
+  end
 end
