@@ -1,8 +1,15 @@
-<li>
-  <%= gravatar_for user, size: 50 %>
-  <%= link_to user.name, user %>
-  <% if !user.supervisor? %>
-    | <%= link_to "delete", supervisor_user_path(user), method: :delete,
-                                  data: { confirm: t(:confirm_message) } %>
+<tr>
+  <td>
+    <%= gravatar_for user, size: 50 %>
+    <%= link_to user.name, user %>
+  </td>
+  <td align="right">
+    <% if !user.supervisor? %>
+      <%= link_to t(:edit), edit_supervisor_user_path(user),
+        class: "btn btn-success" %>
+      <%= link_to t(:delete), [:supervisor, user], method: :delete,
+        class: "btn btn-danger",
+        data: { confirm: t(:confirm_message) } %>
   <% end %>
-</li>
+  </td>
+</tr>
