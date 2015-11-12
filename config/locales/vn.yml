@@ -27,6 +27,9 @@ vn:
   end_date: "Ngày cuối"
   read_more: "Đọc thêm"
   date_check_text: "đầu không được lớn hơn End ngày"
+  supervisor: "giám sát viên"
+  trainee: "Thực tập sinh"
+  add_edit_text: "Thêm / Chỉnh sửa"
   date:
     order:
       - :day

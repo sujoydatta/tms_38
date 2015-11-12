@@ -43,6 +43,9 @@ en:
   tasks: "Tasks:"
   order: "Order"
   description: "Description"
+  supervisor: "Supervisor"
+  trainee: "Trainee"
+  add_edit_text: "Add / Edit"
   date:
     order:
       - :day
