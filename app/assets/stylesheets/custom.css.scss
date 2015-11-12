@@ -230,3 +230,28 @@ select {
 .panel-course-footer{
   height: 40px;
 }
+
+.myTasks {
+  width: 20%;
+  margin: 25px;
+  float: left;
+}
+
+.finishCheckbox{
+  width: 10px;
+  margin-right: 6px !important;
+}
+
+.maxDescription {
+  min-height: 72px;
+}
+
+.tasksHeader {
+	font-size: 25px;
+	margin-bottom: -5px !important;
+}
+
+.submitButtonHolder{
+  width: 12em;
+  margin-top: 2em;
+}
