@@ -30,6 +30,22 @@ vn:
   supervisor: "giám sát viên"
   trainee: "Thực tập sinh"
   add_edit_text: "Thêm / Chỉnh sửa"
+  create_subject_text: "tạo Chủ đề"
+  subject_text: "Đối tượng"
+  add_subject_sucessful_message: "Chủ đề thêm thành công"
+  delete_subject_sucessful_message: "Chủ đề đã bị xóa"
+  update_subject_sccessful_message: "Chủ đề được cập nhật"
+  all_subjects_text: "Tất cả các đối tượng"
+  delete_subject_confirmation_message: "Xóa chủ đề?"
+  edit_subject_text: "chỉnh sửa chủ đề"
+  subject_detail: "Chủ đề Chi tiết"
+  subject_add: "Thêm Subject"
+  back: "Cái lưng"
+  add_course: "Thêm khóa học"
+  all_course: "Tất cả khóa học"
+  tasks: "các tác vụ:"
+  order: "Gọi món"
+  description: "Miêu tả"
   date:
     order:
       - :day
