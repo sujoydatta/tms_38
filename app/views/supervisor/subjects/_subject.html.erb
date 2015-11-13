@@ -1,14 +1,7 @@
 <tr>
   <td><%= link_to subject.name, [:supervisor, subject] %></td>
   <td>
-    <% if subject.description.length > 100 %>
-      <%= subject.description[0..100] %>...
-      <font color: "red">
-        <span><%= link_to t(:read_more), [:supervisor, subject] %></span>
-      </font>
-    <% else %>
-      <%= subject.description %>
-    <% end %>
+    <%= subject.description.truncate 100 %>
   </td>
   <td align="right">
     <%= link_to t(:edit), edit_supervisor_subject_path(subject),
